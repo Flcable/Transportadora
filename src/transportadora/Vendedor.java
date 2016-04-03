@@ -16,6 +16,19 @@ public class Vendedor extends Funcionario {
     
     public double calcularSalario(){
         double salarioFinal = 0; //Implementar regra de negocio para vendedor
+        double qtdNegocioFechado = 0;
+        double salarioMensal = 1500.00;
+        double negocioFechado = salarioMensal*0.5;
+        double bonus = qtdNegocioFechado * negocioFechado;
+        
+        if (qtdNegocioFechado > 0) {
+            salarioFinal = salarioMensal + bonus;
+        }else{
+            salarioFinal = salarioMensal;
+        }
+        
+        
+        
         return salarioFinal;
     }
     
