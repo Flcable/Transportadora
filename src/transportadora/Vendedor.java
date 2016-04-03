@@ -5,26 +5,18 @@
  */
 package transportadora;
 
-import java.util.Date;
-
 /**
  *
  * @author Flavio
  */
-public class Funcionario {
-    public int ID;
-    public String Nome;
-    public String CPF;
-    public String Cargo;
-   
+public class Vendedor extends Funcionario {
+     public double salarioMensal;
+    public double comissaoFixa;
     
     
-  /*  public double calcularSalario(double ht, double bonus, double comissão){
-        double salarioFinal = ht + (ht/);
+    public double calcularSalario(){
+        double salarioFinal = 0; //Implementar regra de negocio para vendedor
         return salarioFinal;
-        
     }
-        */
-    
     
 }
