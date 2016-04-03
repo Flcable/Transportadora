@@ -15,7 +15,17 @@ public class GerenteVendas extends Funcionario{
     
     
     public double calcularSalario(){
-        double salarioFinal = 0; //Implementar regra de negocio para Gerente de vendas
+        double salarioFinal = 0; //Implementar regra de negocio para gerentes de vendas
+        double qtdNegocioFechado = 0;
+        double salarioMensal = 3000.00;
+        double negocioFechado = salarioMensal*0.10;
+        double bonus = qtdNegocioFechado * negocioFechado;
+        
+        if (qtdNegocioFechado > 0) {
+            salarioFinal = salarioMensal + bonus;
+        }else{
+            salarioFinal = salarioMensal;
+        }
         return salarioFinal;
     }
     
