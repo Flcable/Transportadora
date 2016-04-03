@@ -9,38 +9,33 @@ package transportadora;
  *
  * @author Flavio
  */
-public class Motorista extends Funcionario{
+public class Motorista extends Funcionario {
+
     public double SalarioHora;
     public double HoraAdicionais;
-    
-    
-    public double calcularSalario(double salarioHora, double horaTrabalhadas, double salarioFinal){
+
+    public double calcularSalario(double salarioHora, double horaTrabalhadas, double salarioFinal) {
+        boolean caminhao = true;
         salarioHora = 15;
         salarioFinal = 0;
-        double ht = 0;
-        boolean caminhao = true;
-        
-        
-        if (ht > 100 && caminhao == true){
-           
-            double bonusHora = (salarioHora*0.25) * 30;
-            double bonusCarga = (salarioHora*0.10) * 30;
-            double hm =  salarioHora*30;
-            salarioFinal =( hm +  bonusHora + bonusCarga)* ht;
-            
-        } else if (ht <= 100 || caminhao == true){
-            double bonusCarga = (salarioHora*0.10) * 30;
-            double hm =  salarioHora*30;
-            salarioFinal =( hm +  bonusCarga)* ht;
-            
-        } else if (ht > 100 || caminhao == false) {
-            double bonusHora = (salarioHora*0.25) * 30;
-            double hm =  salarioHora*30;
-            salarioFinal =( hm +  bonusHora )* ht;
-        }else {
-            double hm =  salarioHora*30;
-            salarioFinal = hm * ht;
-        }       
+        salarioHora = 15.00;
+        double bonusHora = salarioHora * 0.25;
+        double salarioBonus = salarioHora + bonusHora;
+        double bonusCarga = salarioHora * 0.10;
+        double horasTrabalhada = 0; //
+
+        if (horasTrabalhada < 100 && caminhao == false) {
+
+            salarioFinal = salarioHora * horasTrabalhada;
+
+        } else if (caminhao == true) {
+
+            salarioFinal = (salarioBonus + bonusCarga) * horasTrabalhada;
+
+        } else {
+            salarioFinal = salarioBonus * horasTrabalhada;
+        }
+
         return salarioFinal;
     }
 }
