@@ -9,6 +9,6 @@ package transportadora;
  *
  * @author Flavio
  */
-public class Caminhao {
+public class Caminhao extends Veiculo {
     
 }
